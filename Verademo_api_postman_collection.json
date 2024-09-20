@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "fc5386bb-1d93-4378-a2c5-284fc4f166e3",
-		"name": "MySQL Tests",
+		"_postman_id": "20512543-8ce8-4b6b-963e-a013f3fd5f54",
+		"name": "VerademoAPI-Javascript",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "36377735"
+		"_exporter_id": "36930881"
 	},
 	"item": [
 		{
@@ -76,7 +76,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"blabberUsername\": \"johnny\"\n}",
+							"raw": "{\n    \"blabberUsername\": \"johnny \\\"=(select(0)from(select(sleep(15)))as0x41)=\\\"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -116,7 +116,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"blabberUsername\": \"johnny\"\n}",
+							"raw": "{\n    \"blabberUsername\": \"johnny \\\"=(select(0)from(select(sleep(15)))as0x41)=\\\"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -270,6 +270,9 @@
 				},
 				{
 					"name": "getUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -279,6 +282,15 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{base_url}}/users/getUser",
 							"host": [
@@ -305,7 +317,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"brian\",\n    \"password\": \"brian\"\n}",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -488,7 +500,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"blabId\": \"1 \\\" or blabid = \\\"4\"\n}",
+							"raw": "{\"blabId\": \"\\\"=(select(0)from(select(sleep(15)))as0x41)=\\\"\"}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -573,7 +585,7 @@
 		},
 		{
 			"key": "token",
-			"value": "Token: brian_CBD44F8B5B48A51F7DAB98ABCDF45D4E",
+			"value": "Token: admin_21232F297A57A5A743894A0E4A801FC3",
 			"type": "string"
 		}
 	]
