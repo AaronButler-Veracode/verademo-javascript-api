@@ -71,7 +71,9 @@ The API is using token based authentication. You are required to send an authent
 key=``Authentication`` value=``Token: <USERNAME>_<HASHED PASSWORD>``  
 <img src="https://github.com/veracode-demo-labs/verademo-javascript-api/blob/main/pictures/authentication.png" width="800" />  
 The token is the user's username followed by an underscore and the md5 hash of the user's password. If your are using the default database, the hashed password is already stored in the `blab` database and the `users` table.
-**IMPORTANT:** The register and reset functions do not require an authentication token, and the database must be reset before any other api calls will work.
+**IMPORTANT:** The login,register and reset functions do not require an authentication token, and **the database must be reset before any other api calls will work!!**
+
+If you would like to make an example workflow via postman collections, the register and login functions return an authorization token which can be used to access the rest of the API.
 
 The API provides a few calls that also can reviewed on the automatically generated swagger overview under `http://{host}/public/`. It also contains a full swagger file in `/public/swagger.json` that can be used for dynamic API scanning, as well as a Postman Collection file in `/public/api_postman_collection.json`!
 <img src="https://github.com/veracode-demo-labs/verademo-javascript-api/blob/main/pictures/swagger_overview.png" width="800" />  

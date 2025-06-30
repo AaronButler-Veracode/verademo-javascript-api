@@ -2,15 +2,20 @@ const {db} = require("../config/db.config");
 
 module.exports = (req, res, next) => {
     const authHeader = req.headers['authorization']
-    if ( authHeader == null ) {
+    if ( authHeader == 'undefined' ) {
         return res.status(401).send({ success: 0, data: "Unauthenticated" });
     }
     const myToken = authHeader.split(': ')
-    console.log('Check user auth with token:')
-    console.log("===========================")
-    console.log(myToken[1])
-    console.log("===========================")
-    const creds = myToken[1].split('_')
+    if(myToken[1])
+    {
+        console.log('Check user auth with token:')
+        console.log("===========================")
+        console.log(myToken[1])
+        console.log("===========================")
+        const creds = myToken[1].split('_')
+    } else {
+        return res.status(401).send({ success: 0, data: "Unauthenticated" });
+    }
 
 
     db.query(
