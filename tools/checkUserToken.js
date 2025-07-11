@@ -2,7 +2,7 @@ const {db} = require("../config/db.config");
 
 module.exports = (req, res, next) => {
     const authHeader = req.headers['authorization']
-    const regexp = /^Token:\s[a-zA-Z]+_[a-zA-Z0-9]+$/
+    const regexp = /^Token:\s[\w\W]*_[\w\W]*$/
     if ( authHeader == 'undefined' ) {
         return res.status(401).send({ success: 0, data: "Unauthenticated" });
     }
